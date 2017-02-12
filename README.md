@@ -1,9 +1,8 @@
 # Meet EMO!
 Emo is a friend who can help your child expresses her/his emotions.
+[Meet him here](https://arnofaure.github.io/emo/)
 
 ![Emo Thumb](for-wiki/emo-thumb.jpg)
-
-[Meet him here](https://arnofaure.github.io/emo/)
 
 Visit the [wiki](https://github.com/arnofaure/emo/wiki) for more info.
 
