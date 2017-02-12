@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emo - How do you feel today?</title>
+        <meta name="description" content="Meet Emo, a friendly web app to help your child express her/his feelings and find a solution with you.">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+
+    <!-- favicon start -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- favicon end -->
+
+    <!-- opengrapgh start -->
+    <meta property="og:title" content="Emo - How do you feel today?">
+    <meta property="og:description" content="Meet Emo, a friendly web app to help your child express her/his feelings and find a solution with you.">
+    <meta property="og:url" content="https://untilstudio.ca/emo">
+    <meta property="og:image" content="https://studionora.ca/opengraph/emo-opengraph.jpg">
+    <meta name="twitter:card" content="summary">
+    <!-- opengraph end -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- p5 libraries START -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.sound.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+    <!-- p5 libraries END -->
+
+</head>
+
+<body>
+
+  <div id="preloader">
+    <div id="status">
+        <img src="images/emo-logo-opt.svg" alt="Emo Logo">
+        <p>Loading...</p>
+        </div>
+</div>
+
+    <div class="mobile">
+        <div class="tablet">
+            <img src="images/emo-logo-opt.svg" alt="Emo Logo">
+            <p><span class="pacifico">Emo</span> will be soon available on your tablet.</p>
+            <p>Please visit this site with your laptob/desktop in the meantime.</p>
+            <p>Thank you.</p>
+        </div>
+        <div class="phone">
+            <img src="images/emo-logo-opt.svg" alt="Emo Logo">
+            <p>Unfortunately, <span class="pacifico">Emo</span> is not available on your phone yet.</p>
+            <p>Please visit this site with your laptob/desktop in the meantime.</p>
+            <p>Thank you.</p>
+        </div>
+    </div>
+
+    <div class="resize-screen">
+        <img src="images/emo-logo-opt.svg" alt="Emo Logo">
+        <p><span class="pacifico">Emo</span> needs more space, please enlarge your window. <br> Thank you.</p>
+    </div>
+
+    <div class="welcome-wrapper">
+        <div class="welcome">
+            <div class="welcome-title">
+                <img src="images/emo-logo-home.svg" alt="Emo Logo">
+                <p>Meet <span class="pacifico">Emo</span>, a friendly web app to help your child express her/his feelings and find a solution with you.*</p>
+            </div>
+
+            <!-- Language selection -->
+            <div class="welcome-buttons">
+                <!-- <p>Select Your Language</p> -->
+                <button id="button-en" type="button" name="button">English</button>
+                <button id="button-fr" type="button" name="button">Français</button>
+            </div>
+
+
+        </div>
+        <div class="welcome-info">
+            <p>If you want to help translate Emo in your own language, it's easy, just <a href="https://github.com/arnofaure/emo/wiki/Help-Translate-Emo" target="_blank">visit this page</a> for more info.</p>
+            <br>
+            <p>*Disclaimer: this webapp is not intended to replace a specialist advice. I created this app with my son, I'm not a pediatrician and I don't have any official diploma in the psychology field. I'm just a father of a 6-year-old who wanted to
+                communicate and try to let my son expresses his own feelings.</p>
+        </div>
+    </div>
+
+
+    <div class="title">
+        <img id="imo-logo" src="images/emo-logo-main.svg" alt="Emo Logo">
+    </div>
+
+    <div class="info">
+        <a href="https://github.com/arnofaure/emo/wiki" target="_blank">?</a>
+        <img id="logo-info" src=images/info-circle-border.svg alt="info circle">
+    </div>
+
+    <!-- Turn On/Off Music -->
+    <div class="audio" id="audio-button">
+        <button type="button" name="button" id="audio-on-off"></button>
+    </div>
+
+
+    <div class="bkg-solution-wrapper">
+        <div id="bkg-solution"></div>
+        <div class="solution-final-wrapper display-none">
+            <div id="solution-final-bkg"></div>
+        </div>
+    </div>
+
+      <div id="theStar" class="theStarColor display-none">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 250 250" stroke-linejoin="round"><path d="M125 11.6l28.1 86.4 90.8 0 -73.5 53.4 28.1 86.4 -73.5-53.4 -73.5 53.4 28.1-86.4 -73.5-53.4 90.8 0 28.1-86.4Z"/></svg>
+      </div>
+
+
+    <div id="solution-found" class="display-none">
+        <div id="solution-icon"></div>
+    </div>
+
+    <div id="solution-wrapper" class="display-none">
+        <div class="solution-container">
+            <h5 id="what-txt"></h5>
+            <div class="solution-card" id="card-hug">
+                <img src="images/solution_card-hug.svg" alt="Hug Card">
+                <p id="hug-txt"></p>
+            </div>
+
+            <div class="solution-card" id="card-alone">
+                <img src="images/solution_card-alone.svg" alt="Alone Card">
+                <p id="alone-txt"></p>
+            </div>
+
+            <div class="solution-card" id="card-talk">
+                <img src="images/solution_card-talk.svg" alt="Talk Card">
+                <p id="talk-txt"></p>
+            </div>
+
+            <div class="solution-card" id="card-sleep">
+                <img src="images/solution_card-sleep.svg" alt="Sleep Card">
+                <p id="sleep-txt"></p>
+            </div>
+
+            <div class="solution-card" id="card-share">
+                <img src="images/solution_card-share.svg" alt="Share Card">
+                <p id="share-txt"></p>
+            </div>
+
+            <div class="solution-card" id="card-help">
+                <img src="images/solution_card-help.svg" alt="Help Card">
+                <p id="help-txt"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="talking-bubble">
+        <p id="talking-text"></p>
+        <span></span>
+    </div>
+
+    <div class="talking-bubble-2 display-none">
+        <p id="talking-FeelBetter"></p>
+        <span></span>
+    </div>
+
+    <section class="emo-character">
+        <div id="emo">
+        </div>
+    </section>
+
+
+    <div class="emotion-selection">
+        <div class="box-shadow">&nbsp;</div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-happy"></p>
+            <button id="buttonHappy" class="happy" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-sad"></p>
+            <button id="buttonSad" class="sad" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-angry"></p>
+            <button id="buttonAngry" class="angry" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-afraid"></p>
+            <button id="buttonAfraid" class="afraid" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-tired"></p>
+            <button id="buttonTired" class="tired" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-shy"></p>
+            <button id="buttonShy" class="shy" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-bored"></p>
+            <button id="buttonBored" class="bored" type="button" name="button"></button>
+        </div>
+        <div class="emo-select">
+          <p class="emo-select-txt" id="emo-txt-confused"></p>
+            <button id="buttonConfused" class="confused" type="button" name="button"></button>
+            <div class="confused-background"></div>
+        </div>
+    </div>
+
+
+<!-- sliders = emotion levels -->
+    <div id="scale-wrapper-3">
+        <div class="slider-wrapper">
+            <input type="range" id="emoSlider-3" min="1" max="3" step="1" value="1">
+        </div>
+        <div class="scale">
+            <p>3</p>
+            <p id="scale2">2</p>
+            <p id="scale1">1</p>
+        </div>
+    </div>
+
+    <div id="scale-wrapper-2">
+        <div class="slider-wrapper">
+            <input type="range" id="emoSlider-2" min="1" max="2" step="1" value="1">
+        </div>
+        <div class="scale">
+            <p>2</p>
+            <p id="scale1">1</p>
+        </div>
+    </div>
+
+
+    <!-- for color transition in the canvas -->
+    <span id="main-color"></span>
+
+    <!-- the solution button -->
+    <div class="button-wrapper">
+        <button id="solution-button" class="myButton display-none" type="button"> <img class="button-bulb" src="images/Bulb-only.png" alt="Solution Button"> </button>
+    </div>
+
+
+    <!-- the solution -->
+    <div class="solution-final display-none">
+        <p id="the-solution-is"></p>
+    </div>
+
+    <!-- the reset button -->
+    <div class="button-reset-wrapper">
+        <button id="reset-button" class="myButton display-none" type="button"> <img class="button-reset" src="images/reset.svg" alt=""> </button>
+    </div>
+
+
+<!-- preloader -->
+    <script type="text/javascript">
+          $(window).on('load', function() { // makes sure the whole site is loaded
+                  $('#status').fadeOut(); // will first fade out the loading animation
+                  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                  $('body').delay(350).css({
+                      'overflow': 'hidden'
+                  });
+              })
+      </script>
+
+
+</body>
+
+</html>

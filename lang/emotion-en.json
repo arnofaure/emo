@@ -1,0 +1,19 @@
+{
+    "question": "How do you feel today?",
+    "happy": "Happy",
+    "sad": "Sad",
+    "angry": "Angry",
+    "afraid": "Afraid",
+    "tired": "Tired",
+    "shy": "Shy",
+    "bored": "Bored",
+    "confused": "Confused",
+    "what": "What Could Help You?",
+    "hug": "Hug",
+    "alone": "Be Alone",
+    "talk": "Talk",
+    "sleep": "Sleep",
+    "share": "Share",
+    "help": "Need Help",
+    "solution": "You will feel better soon!"
+}

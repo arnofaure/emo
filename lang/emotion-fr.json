@@ -1,0 +1,19 @@
+{
+        "question": "Comment vas-tu ?",
+        "happy": "Heureux",
+        "sad": "Triste",
+        "angry": "En colère",
+        "afraid": "Peureux",
+        "tired": "Fatigué",
+        "shy": "Timide",
+        "bored": "Ennui",
+        "confused": "Confus",
+        "what": "Qu'est-ce qui pourrait t'aider ?",
+        "hug": "Faire Calin",
+        "alone": "Rester seul",
+        "talk": "Parler",
+        "sleep": "Dormir",
+        "share": "Partager",
+        "help": "Je ne sais pas",
+        "solution": "Je suis sûr que tu vas te sentir mieux très vite !"
+}
