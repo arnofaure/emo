@@ -317,6 +317,17 @@ canvas {
     }
 }
 
+.until-logo {
+  position: fixed;
+  top: 2em;
+  left: 2em;
+  width: 85px;
+}
+
+.until-logo:hover {
+  opacity: .5;
+}
+
 .welcome-wrapper {
     position: fixed;
     display: flex;
