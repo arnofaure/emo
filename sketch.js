@@ -51,7 +51,7 @@ var solutionBagde, solutionIcon;
 
 var langSelect, lang;
 var en = "en";
-var btnFR, btnEN;
+var btnFR, btnEN, btnDE;
 var welcome;
 var question;
 var solution1, solution2, solution3, solution4, solution5, solution6, what, solutionTextWrapper, solutionText, solutionFeelbetter;
@@ -193,9 +193,13 @@ function setup() {
   // Buttons that select the language (and start the music)
   btnFR = select('#button-fr');
   btnEN = select('#button-en');
+  btnDE = select('#button-de');
+
 
   btnFR.mousePressed(inFrench);
   btnEN.mousePressed(inEnglish);
+  btnDE.mousePressed(inGerman);
+
 
   audioButton = select("#audio-button")
   audioButton.mousePressed(playSong);
@@ -239,7 +243,13 @@ function inEnglish() {
   loadLanguage(langSelect);
   welcomeOff();
   playSong();
+}
 
+function inGerman() {
+  langSelect = "de";
+  loadLanguage(langSelect);
+  welcomeOff();
+  playSong();
 }
 
 
