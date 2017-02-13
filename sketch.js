@@ -208,8 +208,8 @@ function setup() {
 
 
 function playSong() {
+  music.setVolume(0.3);
   if (!isPlaying) {
-    music.setVolume(0.4);
     music.loop();
     if ($(".audio").hasClass("audio-mute")) {
       audioButton.removeClass('audio-mute');
@@ -225,10 +225,22 @@ function playSong() {
 }
 
 function playFinalSound() {
-  music.stop();
-      isPlaying = false;
-  // finalSound.setVolume(0.4);
-  finalSound.play();
+  finalSound.setVolume(0.3);
+  if (!isPlaying) {
+    music.stop();
+    finalSound.stop();
+    if (!$(".audio").hasClass("audio-mute")) {
+      audioButton.addClass('audio-mute');
+    }
+    isPlaying = true;
+  } else {
+    music.stop();
+    finalSound.play();
+    isPlaying = false;
+    if ($(".audio").hasClass("audio-mute")) {
+      audioButton.removeClass('audio-mute');
+    }
+  }
 }
 
 function inFrench() {
@@ -271,29 +283,29 @@ function languageText() {
   question.html(lang.question);
 
 
-    emoTxtHappy = select('#emo-txt-happy');
-    emoTxtHappy.html(lang.happy)
+  emoTxtHappy = select('#emo-txt-happy');
+  emoTxtHappy.html(lang.happy)
 
-    emoTxtSad = select('#emo-txt-sad');
-    emoTxtSad.html(lang.sad)
+  emoTxtSad = select('#emo-txt-sad');
+  emoTxtSad.html(lang.sad)
 
-    emoTxtAngry = select('#emo-txt-angry');
-    emoTxtAngry.html(lang.angry)
+  emoTxtAngry = select('#emo-txt-angry');
+  emoTxtAngry.html(lang.angry)
 
-    emoTxtAfraid = select('#emo-txt-afraid');
-    emoTxtAfraid.html(lang.afraid)
+  emoTxtAfraid = select('#emo-txt-afraid');
+  emoTxtAfraid.html(lang.afraid)
 
-    emoTxtTired = select('#emo-txt-tired');
-    emoTxtTired.html(lang.tired)
+  emoTxtTired = select('#emo-txt-tired');
+  emoTxtTired.html(lang.tired)
 
-    emoTxtShy = select('#emo-txt-shy');
-    emoTxtShy.html(lang.shy)
+  emoTxtShy = select('#emo-txt-shy');
+  emoTxtShy.html(lang.shy)
 
-    emoTxtBored = select('#emo-txt-bored');
-    emoTxtBored.html(lang.bored)
+  emoTxtBored = select('#emo-txt-bored');
+  emoTxtBored.html(lang.bored)
 
-    emoTxtConfused = select('#emo-txt-confused');
-    emoTxtConfused.html(lang.confused)
+  emoTxtConfused = select('#emo-txt-confused');
+  emoTxtConfused.html(lang.confused)
 
   what = select("#what-txt");
   what.html(lang.what);
@@ -696,12 +708,11 @@ function solutionSelected() {
 
   bkgFinal.removeClass('display-none');
   bkgFinal.addClass('solution-final-anim');
-theFinalStar.removeClass('display-none');
+  theFinalStar.removeClass('display-none');
 
-if (!$("#theStar").hasClass("animation-star")) {
-  theFinalStar.addClass('animation-star');
-}
-
+  if (!$("#theStar").hasClass("animation-star")) {
+    theFinalStar.addClass('animation-star');
+  }
 
   resetButton.removeClass('display-none');
 
@@ -723,6 +734,9 @@ if (!$("#theStar").hasClass("animation-star")) {
     solutionIcon.addClass('solution-help')
   }
 
+  if (!$(".audio").hasClass("display-none")) {
+    audioButton.addClass('display-none');
+  }
 }
 
 function reset() {
@@ -790,10 +804,14 @@ function reset() {
     theFinalStar.removeClass('animation-star');
   }
 
-    bkgFinal.removeClass('solution-final-anim');
+  bkgFinal.removeClass('solution-final-anim');
+
+  if ($(".audio").hasClass("display-none")) {
+    audioButton.removeClass('display-none');
+  }
 
 
-playSong();
+  playSong();
   theSolutionIs = "none"
 
 }
