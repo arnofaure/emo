@@ -1,5 +1,5 @@
 # Meet EMO!
-Emo is a friend who can help your child expresses her/his emotions.
+Emo is a friend who can help your child express her/his emotions.
 [Meet him here](https://arnofaure.github.io/emo/)
 
 ![Emo Thumb](for-wiki/emo-thumb.jpg)
@@ -17,4 +17,4 @@ Emo is under an  [Attribution-NonCommercial-NoDerivatives 4.0 International Lice
 (CC BY-NC-ND 4.0) - 2017
 
 ### Disclaimer
-This app is not intended to replace a specialist advice. I created this app with my son, I'm not a pediatrician and I don't have any official diploma in the psychology field. I'm just a father of a 6-year-old who wanted to let my son expresses his own feelings.
+This app is not intended to replace a specialist advice. I created this app with my son, I'm not a pediatrician and I don't have any official diploma in the psychology field. I'm just a father of a 6-year-old who wanted to let my son express his own feelings.
