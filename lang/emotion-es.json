@@ -1,0 +1,19 @@
+{
+    "question": "¿Como te sientes hoy?",
+    "happy": "Contento",
+    "sad": "Triste",
+    "angry": "Enojado",
+    "afraid": "Asustado",
+    "tired": "Cansado",
+    "shy": "Tímido",
+    "bored": "Aburrido",
+    "confused": "Confundido",
+    "what": "¿Qué podria ayudarte?",
+    "hug": "Abrazo",
+    "alone": "Estar solo",
+    "talk": "Hablar",
+    "sleep": "Dormir",
+    "share": "Compartir",
+    "help": "Necesitar ayuda",
+    "solution": "¡Pronto te sentirás mejor!"
+}
